@@ -1,7 +1,8 @@
-import React from "react";
+import { AiFillStar } from "react-icons/ai";
 
-const Star = () => {
-	return <span>*</span>;
-};
-
+const Star = () => (
+	<span>
+		<AiFillStar color="#ffbd08" size={"1rem"} />
+	</span>
+);
 export default Star;

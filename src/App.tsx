@@ -10,13 +10,9 @@ const App = () => {
 				<button>Add +</button>
 				<button>Sort</button>
 			</div>
-			<div>
+			<div className="card-grid">
 				{projects.map((project) => (
-					<Card
-						key={project.name}
-						name={project.name}
-						rating={project.rating}
-					/>
+					<Card {...project} key={project.id} />
 				))}
 			</div>
 		</div>
