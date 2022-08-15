@@ -1,0 +1,23 @@
+.form-wrapper {
+	height: 100%;
+	width: 100vw;
+	background-color: rgba(2, 2, 2, 0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-wrapper form {
+	display: flex;
+	flex-direction: column;
+	height: 50%;
+	width: 50%;
+	border: 2px solid #eee;
+	border-radius: 0.5rem;
+	position: relative;
+	background-color: #eee;
+	color: #222;
+}

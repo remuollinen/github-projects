@@ -14,7 +14,7 @@
 	transform: scale(1.03);
 }
 
-.card .close-icon {
+.close-icon {
 	position: absolute;
 	top: -1rem;
 	right: -1rem;
@@ -27,6 +27,6 @@
 	z-index: 2;
 }
 
-.card .close-icon:hover {
+.close-icon:hover {
 	background-color: #e30505;
 }

@@ -1,4 +1,4 @@
-export const projects = [
+export const defaultProjects = [
 	{
 		id: "a87e8618-7392-4ac2-b4d0-c6b9b8fb3304",
 		name: "React",
