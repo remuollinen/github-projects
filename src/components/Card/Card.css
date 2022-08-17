@@ -1,17 +1,20 @@
 .card {
+	height: 200px;
+	width: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 	text-decoration: none;
-	text-align: center;
 	border: 2px solid #eee;
 	border-radius: 0.5rem;
 	position: relative;
 	color: #eee;
-	-webkit-filter: contrast(0.8);
-	filter: contrast(0.8);
 	transition: all 0.15s ease-in-out;
 }
 
 .card:hover {
-	transform: scale(1.03);
+	transform: translateY(-4px);
+	box-shadow: 0 2px 6px 0 rgb(195, 195, 195);
 }
 
 .close-icon {
@@ -24,7 +27,7 @@
 	color: #222;
 	transition: all 0.15s ease-in-out;
 	cursor: pointer;
-	z-index: 2;
+	z-index: 1;
 }
 
 .close-icon:hover {

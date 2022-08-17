@@ -1,15 +1,8 @@
 import Star from "../Star/Star";
+import { Project } from "../../../types";
 import { colors } from "../../data/colors";
 import { AiFillCloseCircle } from "react-icons/ai";
 import "./Card.css";
-
-interface Project {
-	id: string;
-	name: string;
-	url: string;
-	rating: number;
-	created_at: string;
-}
 
 const Card = (project: Project) => {
 	const randomColor = (colors: string[]) => {
@@ -39,8 +32,8 @@ const Card = (project: Project) => {
 			/>
 			<div>
 				<p>
-					{[...Array(project.rating)].map(() => (
-						<Star />
+					{[...Array(project.rating)].map((i) => (
+						<Star key={i} />
 					))}
 				</p>
 			</div>
