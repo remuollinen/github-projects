@@ -12,17 +12,38 @@ const App = () => {
 	const [projects, setProjects] = useState<Project[]>(
 		localProjects ? JSON.parse(localProjects) : defaultProjects
 	);
-	const [openModal, setOpenModal] = useState(false);
+	const [openModal, setOpenModal] = useState<boolean>(false);
+	const [sortValue, setSortValue] = useState<string>("");
 
+	// opens modal for adding new project
 	const openAddProject: () => void = () => {
 		setOpenModal(true);
 	};
 
+	// sorts projects according to sortValue state (rating or date)
+	const sortHandler = (projects: Project[]) => {
+		if (sortValue === "rating") {
+			return projects?.sort((a: Project, b: Project) => b.rating - a.rating);
+		} else if (sortValue === "date-desc") {
+			return projects?.sort(
+				(a: Project, b: Project) =>
+					Date.parse(b.created_at) - Date.parse(a.created_at)
+			);
+		} else if (sortValue === "date-asc") {
+			return projects?.sort(
+				(a: Project, b: Project) =>
+					Date.parse(a.created_at) - Date.parse(b.created_at)
+			);
+		} else {
+			return projects;
+		}
+	};
+
 	return (
 		<div className="App">
-			<Header openAddProject={openAddProject} />
+			<Header openAddProject={openAddProject} setSortValue={setSortValue} />
 			<div className="card-grid">
-				{projects.map((project) => (
+				{sortHandler(projects).map((project) => (
 					<Card {...project} key={project.id} />
 				))}
 			</div>
