@@ -5,6 +5,7 @@ import AddProject from "./components/AddProject/AddProject";
 import Card from "./components/Card/Card";
 import Header from "./components/Header/Header";
 import { defaultProjects } from "./data/projects";
+import { motion } from "framer-motion";
 
 const App = () => {
 	const localProjects = localStorage.getItem("projects")! as string;
@@ -42,11 +43,11 @@ const App = () => {
 	return (
 		<div className="App">
 			<Header openAddProject={openAddProject} setSortValue={setSortValue} />
-			<div className="card-grid">
+			<motion.div layout className="card-grid">
 				{sortHandler(projects).map((project) => (
 					<Card {...project} key={project.id} />
 				))}
-			</div>
+			</motion.div>
 			{openModal && (
 				<AddProject
 					setOpenModal={setOpenModal}

@@ -3,6 +3,7 @@ import { Project } from "../../../types";
 import { colors } from "../../data/colors";
 import { AiFillCloseCircle } from "react-icons/ai";
 import "./Card.css";
+import { motion } from "framer-motion";
 
 const Card = (project: Project) => {
 	const randomColor = (colors: string[]) => {
@@ -16,28 +17,32 @@ const Card = (project: Project) => {
 	};
 
 	return (
-		<a
-			id={project.id}
-			href={project.url}
-			target="_blank"
-			rel="noreferrer"
-			className="card"
-			style={{ backgroundColor: randomColor(colors) }}
-		>
-			<h2>{project.name}</h2>
-			<AiFillCloseCircle
-				size={"2rem"}
-				className="close-icon"
-				onClick={removeProjectHandler}
-			/>
-			<div>
-				<p>
-					{[...Array(project.rating)].map((i) => (
-						<Star key={i} />
-					))}
-				</p>
-			</div>
-		</a>
+		<motion.div layout transition={{ duration: 0.7 }}>
+			<a
+				id={project.id}
+				href={project.url}
+				target="_blank"
+				rel="noreferrer"
+				className="card"
+				style={{
+					backgroundColor: randomColor(colors),
+				}}
+			>
+				<h2>{project.name}</h2>
+				<AiFillCloseCircle
+					size={"2rem"}
+					className="close-icon"
+					onClick={removeProjectHandler}
+				/>
+				<div>
+					<p>
+						{[...Array(project.rating)].map((i) => (
+							<Star key={i} />
+						))}
+					</p>
+				</div>
+			</a>
+		</motion.div>
 	);
 };
 
