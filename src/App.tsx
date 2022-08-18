@@ -3,6 +3,7 @@ import { Project } from "../types";
 import "./App.css";
 import AddProject from "./components/AddProject/AddProject";
 import Card from "./components/Card/Card";
+import Header from "./components/Header/Header";
 import { defaultProjects } from "./data/projects";
 
 const App = () => {
@@ -13,17 +14,13 @@ const App = () => {
 	);
 	const [openModal, setOpenModal] = useState(false);
 
-	const openAddProject = () => {
+	const openAddProject: () => void = () => {
 		setOpenModal(true);
 	};
 
 	return (
 		<div className="App">
-			<h1>Awesome Projects</h1>
-			<div>
-				<button onClick={openAddProject}>Add new</button>
-				<button>Sort</button>
-			</div>
+			<Header openAddProject={openAddProject} />
 			<div className="card-grid">
 				{projects.map((project) => (
 					<Card {...project} key={project.id} />
