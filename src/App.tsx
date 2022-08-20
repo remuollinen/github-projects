@@ -8,7 +8,7 @@ import { defaultProjects } from "./data/projects";
 import { motion } from "framer-motion";
 
 const App = () => {
-	const localProjects = localStorage.getItem("projects")! as string;
+	const localProjects = localStorage.getItem("projects")!;
 
 	const [projects, setProjects] = useState<Project[]>(
 		localProjects ? JSON.parse(localProjects) : defaultProjects
@@ -45,7 +45,7 @@ const App = () => {
 			<Header openAddProject={openAddProject} setSortValue={setSortValue} />
 			<motion.div layout className="card-grid">
 				{sortHandler(projects).map((project) => (
-					<Card {...project} key={project.id} />
+					<Card project={project} key={project.id} setProjects={setProjects} />
 				))}
 			</motion.div>
 			{openModal && (

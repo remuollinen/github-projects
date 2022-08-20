@@ -5,7 +5,13 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import "./Card.css";
 import { motion } from "framer-motion";
 
-const Card = (project: Project) => {
+const Card = ({
+	project,
+	setProjects,
+}: {
+	project: Project;
+	setProjects: (newState: Project[]) => void;
+}) => {
 	const randomColor = (colors: string[]) => {
 		return colors[Math.floor(Math.random() * colors.length)];
 	};
@@ -13,7 +19,14 @@ const Card = (project: Project) => {
 	const removeProjectHandler = (e: React.MouseEvent<SVGAElement>) => {
 		e.preventDefault();
 		const target = e.target as HTMLElement;
-		console.log(target.parentNode);
+		const card = target.closest(".card");
+		const localProjects = JSON.parse(localStorage.getItem("projects")!);
+		const index = localProjects.findIndex(
+			(project: Project) => project.id === card?.id
+		);
+		localProjects.splice(index, 1);
+		localStorage.setItem("projects", JSON.stringify(localProjects));
+		setProjects(localProjects);
 	};
 
 	return (
