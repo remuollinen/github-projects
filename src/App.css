@@ -28,8 +28,9 @@ body {
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
 	.card-grid {
 		grid-template-columns: 1fr;
+		padding: 0;
 	}
 }

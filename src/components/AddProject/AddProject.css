@@ -17,7 +17,7 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 50%;
+	height: 60%;
 	width: 50%;
 	border: 2px solid #eee;
 	border-radius: 0.5rem;
@@ -44,7 +44,7 @@
 }
 
 .form-wrapper form label input[type="number"] {
-	width: 8%;
+	width: 10%;
 }
 
 button {
@@ -62,4 +62,23 @@ button {
 
 button:hover {
 	background-color: #444;
+}
+
+@media screen and (max-width: 750px) {
+	.form-wrapper form {
+		height: 80%;
+		width: 60%;
+	}
+	.form-wrapper form label {
+		flex-direction: column;
+	}
+
+	.form-wrapper form label input {
+		width: 100%;
+		margin-top: 1rem;
+	}
+
+	.form-wrapper form label input[type="number"] {
+		width: 20%;
+	}
 }
