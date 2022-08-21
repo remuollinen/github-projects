@@ -15,7 +15,7 @@ const AddProject = ({
 }) => {
 	const [name, setName] = useState("");
 	const [url, setUrl] = useState("");
-	const [rating, setRating] = useState(0);
+	const [rating, setRating] = useState(1);
 
 	const closeModalHandler = () => {
 		setOpenModal(false);
