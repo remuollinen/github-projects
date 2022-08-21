@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { Project } from "../../../types";
+import { Project, SetProjectsState } from "../../../types";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 import "./AddProject.css";
@@ -11,7 +11,7 @@ const AddProject = ({
 }: {
 	setOpenModal: (newState: boolean) => void;
 	projects: Project[];
-	setProjects: (newState: Project[]) => void;
+	setProjects: SetProjectsState;
 }) => {
 	const [name, setName] = useState("");
 	const [url, setUrl] = useState("");

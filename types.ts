@@ -9,3 +9,5 @@ export interface Project {
 	rating: number;
 	created_at: string;
 }
+
+export type SetProjectsState = (newState: Project[]) => void;

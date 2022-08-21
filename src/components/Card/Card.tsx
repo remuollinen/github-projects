@@ -1,5 +1,5 @@
 import Star from "../Star/Star";
-import { Project } from "../../../types";
+import { Project, SetProjectsState } from "../../../types";
 import { colors } from "../../data/colors";
 import { AiFillCloseCircle } from "react-icons/ai";
 import "./Card.css";
@@ -10,7 +10,7 @@ const Card = ({
 	setProjects,
 }: {
 	project: Project;
-	setProjects: (newState: Project[]) => void;
+	setProjects: SetProjectsState;
 }) => {
 	const randomColor = (colors: string[]) => {
 		return colors[Math.floor(Math.random() * colors.length)];
