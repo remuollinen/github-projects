@@ -25,6 +25,12 @@ This is a project displaying Github projects in a grid where the user can add a 
 cd github-projects
 ```
 
+- Install packages and dependencies
+
+```shell
+npm install
+```
+
 - Run the project locally -> opens the browser on localhost:3000
 
 ```shell
