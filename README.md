@@ -8,6 +8,7 @@ This is a project displaying Github projects in a grid where the user can add a 
 - Framer Motion for animating the order of cards when sorted
 - Uuid for generating a random id for new added projects
 - Local storage used for storing the projects in the browser and to have new list available after page reload
+- React Icons for close and star icons
 
 ## File structure
 
@@ -29,3 +30,10 @@ cd github-projects
 ```shell
 npm start
 ```
+
+## Screenshots
+
+![desktop view](desktop_view.png)
+![mobile view](mobile_view.png)
+![add project desktop view](add_project.png)
+![add project mobile](add_project_mobile_view.png)
