@@ -29,3 +29,10 @@ cd github-projects
 ```shell
 npm start
 ```
+
+## Screenshots
+
+![desktop view](desktop_view.png)
+![mobile view](mobile_view.png)
+![add project desktop view](add_project.png)
+![add project mobile](add_project_mobile_view.png)
